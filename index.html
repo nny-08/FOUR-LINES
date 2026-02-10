@@ -112,7 +112,8 @@ function backToGacha(){
   document.getElementById('gacha').style.display='block';
 }
 
-  const express = require('express');
+
+const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors());
@@ -196,9 +197,11 @@ app.get('/admin/draws', (req,res)=>{
   res.json(draws);
 });
 
-app.listen(3000, ()=>console.log('Server running on port 3000'));
+app.listen(80, ()=>console.log('Server running on port 80'));
 </script>
 
 </body>
 </html>
+
+
 
