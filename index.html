@@ -51,7 +51,7 @@ let prizeImages = {
 
 // 更新剩餘抽數
 function updateStatus(){
-  fetch('http://localhost:3000/status')
+  fetch('https://nny-08.github.io:3000/status')
   .then(res=>res.json())
   .then(data=>{
     document.getElementById('status').innerText = `已抽：${data.drawn} / 剩餘：${data.remaining}`;
@@ -62,7 +62,7 @@ function updateStatus(){
 function verifyCode(){
   const code = document.getElementById('codeInput').value;
   if(code.length !== 4){ alert('請輸入4位驗證碼'); return; }
-  fetch('http://localhost:3000/check-code', {
+  fetch('https://nny-08.github.io:3000/check-code', {
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({code})
@@ -85,7 +85,7 @@ function drawPrize(){
   const egg = document.getElementById('gachaEgg');
   egg.style.transform = 'rotate(360deg)'; // 旋轉動畫
   setTimeout(()=>{
-    fetch('http://localhost:3000/draw',{
+    fetch('https://nny-08.github.io:3000/draw',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({code: currentCode})
